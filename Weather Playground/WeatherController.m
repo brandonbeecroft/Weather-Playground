@@ -20,6 +20,29 @@
     return sharedInstance;
 }
 
+//- (void)getWeatherWithName:(NSString *)name completion:(void (^)(Weather *weather))completion
+//{
+//    NSString *path = [NSString stringWithFormat:@"weather?q=%@", name];
+//    [[NetworkController api] GET:path parameters:nil
+//                         success:
+//     ^(NSURLSessionDataTask *task, id responseObject)
+//     {
+//         NSLog(@"getWeatherWithName: %@", responseObject);
+//         NSDictionary *responseCountry = responseObject;
+//         Weather *weatherObject = [[Weather alloc] initWithDictionary:responseCountry];
+//         completion(weatherObject);
+//     }
+//                         failure:
+//     ^(NSURLSessionDataTask *task, NSError *error)
+//     {
+//         NSLog(@"I'm an Error");
+//         NSLog(@"ERROR: %@", error);
+//         completion(nil);
+//     }
+//     ];
+//}
+
+
 - (void)getWeatherWithName:(NSString *)name completion:(void (^)(NSArray *weather))completion {
 
     NSString *path = [NSString stringWithFormat:@"weather?q=%@", name];
@@ -42,16 +65,22 @@
         // create an array to hold all the dictionaries
         NSMutableArray *weatherArray = [NSMutableArray new];
 
+        NSDictionary *responseCountry = responseObject;
+
         // load each dictionary in responseObject into the array. each dictionary is converted to a weather object.
-        for (NSDictionary *dictionary in responseObject) {
-            [weatherArray addObject:[[Weather alloc] initWithDictionary:dictionary]];
-        }
+        //for (NSDictionary *dictionary in responseCountry) {
+        [weatherArray addObject:[[Weather alloc] initWithDictionary:responseCountry]];
+        //}
 
         // return the array to the view controller for display.
         completion(weatherArray);
 
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"there was an error somewhere!");
+
+        // how to get the existing instance of the viewcontroller and send it this message?
+        WPViewController *msg = [WPViewController new];
+        msg.weatherTempLabel.text = @"oops!";
         completion(nil);
     }];
 }

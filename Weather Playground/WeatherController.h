@@ -10,6 +10,7 @@
 
 #import "Weather.h"
 #import "NetworkController.h"
+#import "WPViewController.h"
 
 @interface WeatherController : NSObject
 

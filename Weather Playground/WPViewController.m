@@ -12,7 +12,6 @@
 
 @interface WPViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *cityField;
 
 @end
 
@@ -22,6 +21,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.cityField.delegate = self;
+    self.weatherTempLabel.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -33,8 +34,19 @@
     [[WeatherController sharedInstance] getWeatherWithName:[self.cityField.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] completion:^(NSArray *weather) {
        Weather *theWeather = weather.firstObject;
 
-        NSLog(@"theWeather is: %@",theWeather.description);
+       NSLog(@"theWeather is: %@",theWeather.weatherDescription);
+
+        self.cityLabel.text = theWeather.locationName;
+        self.weatherDescriptionLabel.text = theWeather.weatherDescription;
+
+        // not working?
+        //self.weatherTempLabel.text = theWeather.weatherTemp;
+
+        // TODO: fix this!
+        self.weatherTempLabel.hidden = NO;
     }];
+
+    [self.cityField resignFirstResponder];
 }
 
 @end

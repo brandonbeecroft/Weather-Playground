@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WPViewController : UIViewController
+@interface WPViewController : UIViewController <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *cityField;
+@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *weatherDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *weatherTempLabel;
 
 @end
