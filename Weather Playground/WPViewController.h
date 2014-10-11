@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIImage+weatherImage.h"
 
 @interface WPViewController : UIViewController <UITextFieldDelegate>
 

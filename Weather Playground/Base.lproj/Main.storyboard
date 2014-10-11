@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -20,10 +19,10 @@
                             <view alpha="0.74999999999999978" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s2s-BK-pWk">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="575"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.74999999999999978" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clouds.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cX5-OV-uCb">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="567"/>
+                                    <imageView userInteractionEnabled="NO" alpha="0.89999999999999991" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clouds.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cX5-OV-uCb">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="575"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="London" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BDX-rV-DIa">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="London" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BDX-rV-DIa">
                                         <rect key="frame" x="27" y="33" width="268" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="0.51000000000000001" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.27586894132653061" green="0.27586894132653061" blue="0.27586894132653061" alpha="1" colorSpace="calibratedRGB"/>
@@ -51,7 +50,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="78°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRn-dr-zmF">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRn-dr-zmF">
                                         <rect key="frame" x="10" y="217" width="304" height="68"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="61"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,6 +72,7 @@
                     <connections>
                         <outlet property="cityField" destination="BDX-rV-DIa" id="HBz-Yz-Soy"/>
                         <outlet property="cityLabel" destination="bak-Ez-6u2" id="oPA-JQ-uoL"/>
+                        <outlet property="weatherBackground" destination="cX5-OV-uCb" id="diU-PY-9EH"/>
                         <outlet property="weatherDescriptionLabel" destination="vbe-vc-Nor" id="dbp-cU-VcW"/>
                         <outlet property="weatherTempLabel" destination="pRn-dr-zmF" id="h7c-or-oSF"/>
                     </connections>

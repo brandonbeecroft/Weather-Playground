@@ -12,15 +12,11 @@
 
 @implementation Weather
 
-
+    
 - (id)initWithDictionary:(NSDictionary *)dictionary {
 
     self = [super init];
     if (self) {
-
-        if ([dictionary isKindOfClass:[NSDictionary class]]) {
-            NSLog(@"still a dictionary");
-        }
         self.locationName = dictionary[@"name"];
         self.weatherMain = dictionary[@"weather"][0][@"main"];
         self.weatherDescription = dictionary[@"weather"][0][@"description"];
